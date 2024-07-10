@@ -10,6 +10,6 @@ import TicTacToeMinimax
 @main
 struct TicTacToeCLI: ParsableCommand {
     func run() throws {
-        TicTacToePlayer.main()
+        TicTacToeCLIPlayer.main()
     }
 }

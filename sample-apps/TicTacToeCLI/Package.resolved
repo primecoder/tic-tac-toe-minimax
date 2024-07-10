@@ -1,5 +1,5 @@
 {
-  "originHash" : "79dc738322a0e58349d74efb3e07afbd1fe1c4d0ca54b7b5c0d6a75a5437d7dd",
+  "originHash" : "dfb55de47a2531035ef9aa52c0e230696c0ff3d3acebc5dd678cdd4bd67bfe33",
   "pins" : [
     {
       "identity" : "swift-argument-parser",
@@ -16,7 +16,7 @@
       "location" : "git@github.com:primecoder/tic-tac-toe-minimax.git",
       "state" : {
         "branch" : "main",
-        "revision" : "24258c7bb9d34ca0418448b43dc5d5dbe1d96ff3"
+        "revision" : "12a96eb48ea58b80d7c7401a00e75228e8f9544f"
       }
     }
   ],
