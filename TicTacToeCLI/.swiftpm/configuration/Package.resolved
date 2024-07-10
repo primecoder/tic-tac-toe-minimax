@@ -1,0 +1,24 @@
+{
+  "originHash" : "79dc738322a0e58349d74efb3e07afbd1fe1c4d0ca54b7b5c0d6a75a5437d7dd",
+  "pins" : [
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "0fbc8848e389af3bb55c182bc19ca9d5dc2f255b",
+        "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "tic-tac-toe-minimax",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:primecoder/tic-tac-toe-minimax.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "70f05a23d7ed517c35b72b7f89ed7e645b341443"
+      }
+    }
+  ],
+  "version" : 3
+}
