@@ -7,7 +7,7 @@ let package = Package(
     name: "TicTacToeCLI",
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.2.0"),
-        .package(url: "https://github.com/primecoder/tic-tac-toe-minimax.git", branch: "main"),
+        .package(url: "https://github.com/primecoder/tic-tac-toe-minimax.git", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -16,7 +16,7 @@ let package = Package(
             name: "TicTacToeCLI",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
-                .product(name: "ArgumentParser", package: "tic-tac-toe-minimax"),
+                .product(name: "TicTacToeMinimax", package: "tic-tac-toe-minimax")
             ]
         ),
     ]

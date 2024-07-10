@@ -1,5 +1,5 @@
 {
-  "originHash" : "84040541b3179a7d48896af1214071a56b07b4a049d8d0e590e6333936d51d3d",
+  "originHash" : "8d2c9550d4c50e6f23dc1c526fe36c0d1f7cfe85cabe2dac504ebeddc1b3a1b4",
   "pins" : [
     {
       "identity" : "swift-argument-parser",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "0fbc8848e389af3bb55c182bc19ca9d5dc2f255b",
         "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "tic-tac-toe-minimax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/primecoder/tic-tac-toe-minimax.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d32484d798ba06e62780402e9c17beabf254a739"
       }
     }
   ],

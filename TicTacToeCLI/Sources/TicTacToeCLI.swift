@@ -5,7 +5,7 @@
 // https://swiftpackageindex.com/apple/swift-argument-parser/documentation
 
 import ArgumentParser
-import TicTacToeMinimax
+import Tic_Tac_Toe_Minimax
 
 @main
 struct TicTacToeCLI: ParsableCommand {
