@@ -6,7 +6,6 @@
 
 import Foundation
 
-@main
 struct TicTacToePlayer {
 
     static func main() {
