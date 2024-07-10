@@ -38,6 +38,7 @@ public class TicTacToeGame {
 
     public func resetBoard() {
         board.removeAll(keepingCapacity: true)
+        board = Array(repeating: Array(repeating: .empty, count: 3), count: 3)
     }
 
     public func playMove(cell: Int, player: Player) {
