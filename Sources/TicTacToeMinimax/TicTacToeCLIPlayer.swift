@@ -19,7 +19,8 @@ public struct TicTacToeCLIPlayer {
                 if let bestMove = game.findBestMove() {
                     game.playMove(cell: bestMove, player: .ai)
                 }
-                game.showBoard()
+                // game.showBoard()
+                print(game.boardString())
             } else {
                 print("Invalid move!")
             }

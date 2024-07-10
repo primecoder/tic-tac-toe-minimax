@@ -92,6 +92,7 @@ public class TicTacToeGame {
         return moves
     }
 
+    // TODO: call boardString() instead
     public func showBoard() {
         print("")
         for row in board {
@@ -104,7 +105,23 @@ public class TicTacToeGame {
             }.joined(separator: " "))
         }
     }
-    
+
+    public func boardString() -> String {
+        var boardString = ""
+        for row in board {
+            boardString +=
+            row.map { cell -> String in
+                switch cell {
+                case .empty: return "-"
+                case .x: return "X"
+                case .o: return "O"
+                }
+            }.joined(separator: " ")
+            boardString += "\n"
+        }
+        return boardString
+    }
+
     public func minimax(depth: Int, isMaximising: Bool) -> Int {
         if checkWin(player: .ai) {
             return 10 - depth // AI wins
