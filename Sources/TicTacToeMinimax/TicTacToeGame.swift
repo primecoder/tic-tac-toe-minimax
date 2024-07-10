@@ -1,10 +1,10 @@
 import Foundation
 
-enum Player {
+public enum Player {
     case human, ai
 }
 
-enum Cell {
+public enum Cell {
     case empty, x, o
 }
 
@@ -36,7 +36,7 @@ public class TicTacToeGame {
         self.board = Array(repeating: Array(repeating: .empty, count: 3), count: 3)
     }
 
-    func playMove(cell: Int, player: Player) {
+    public func playMove(cell: Int, player: Player) {
         guard let (row, col) = Self.cellNumberToRowCol[cell] else {
             print("Invalid move! Cell: \(cell)")
             return
@@ -47,7 +47,7 @@ public class TicTacToeGame {
         board[row][col] = player == .human ? .x : .o
     }
 
-    func checkWin(player: Player) -> Bool {
+    public func checkWin(player: Player) -> Bool {
         let target: Cell = player == .human ? .x : .o
 
         // Check rows
@@ -76,11 +76,11 @@ public class TicTacToeGame {
         return false
     }
 
-    func isBoardFull() -> Bool {
+    public func isBoardFull() -> Bool {
         return !board.flatMap { $0 }.contains(.empty)
     }
 
-    func availableMoves() -> [(Int, Int)] {
+    public func availableMoves() -> [(Int, Int)] {
         var moves: [(Int, Int)] = []
         for i in 0..<3 {
             for j in 0..<3 {
@@ -92,7 +92,7 @@ public class TicTacToeGame {
         return moves
     }
 
-    func showBoard() {
+    public func showBoard() {
         print("")
         for row in board {
             print(row.map { cell -> String in
@@ -105,7 +105,7 @@ public class TicTacToeGame {
         }
     }
     
-    func minimax(depth: Int, isMaximising: Bool) -> Int {
+    public func minimax(depth: Int, isMaximising: Bool) -> Int {
         if checkWin(player: .ai) {
             return 10 - depth // AI wins
         } else if checkWin(player: .human) {
@@ -135,7 +135,7 @@ public class TicTacToeGame {
         }
     }
 
-    func findBestMove() -> Int? {
+    public func findBestMove() -> Int? {
         guard let bestMove: (Int, Int) = findBestMove() else {
             return nil
         }
