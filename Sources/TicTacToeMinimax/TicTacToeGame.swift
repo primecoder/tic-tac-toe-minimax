@@ -36,6 +36,10 @@ public class TicTacToeGame {
         self.board = Array(repeating: Array(repeating: .empty, count: 3), count: 3)
     }
 
+    public func resetBoard() {
+        board.removeAll(keepingCapacity: true)
+    }
+
     public func playMove(cell: Int, player: Player) {
         guard let (row, col) = Self.cellNumberToRowCol[cell] else {
             print("Invalid move! Cell: \(cell)")
