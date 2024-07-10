@@ -10,6 +10,7 @@ import TicTacToeMinimax
 @main
 struct TicTacToeCLI: ParsableCommand {
     mutating func run() throws {
+        let game = TicTacToeGame()
         print("Hello, world!")
     }
 }

@@ -32,7 +32,7 @@ public class TicTacToeGame {
         return .playing
     }
 
-    init() {
+    public init() {
         self.board = Array(repeating: Array(repeating: .empty, count: 3), count: 3)
     }
 
