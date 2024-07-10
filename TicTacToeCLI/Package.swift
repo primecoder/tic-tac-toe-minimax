@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "TicTacToeCLI",
+    platforms: [.macOS(.v10_13)],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.2.0"),
         .package(url: "git@github.com:primecoder/tic-tac-toe-minimax.git", branch: "main")

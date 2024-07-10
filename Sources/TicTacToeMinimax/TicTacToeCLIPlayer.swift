@@ -6,7 +6,7 @@
 
 import Foundation
 
-public struct TicTacToePlayer {
+public struct TicTacToeCLIPlayer {
 
     public static func main() {
         let game = TicTacToeGame()
