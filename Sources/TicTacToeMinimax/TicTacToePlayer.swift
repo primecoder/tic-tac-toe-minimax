@@ -6,9 +6,9 @@
 
 import Foundation
 
-struct TicTacToePlayer {
+public struct TicTacToePlayer {
 
-    static func main() {
+    public static func main() {
         let game = TicTacToeGame()
         while game.status == .playing {
             print("Enter cell number 1..9: ")
