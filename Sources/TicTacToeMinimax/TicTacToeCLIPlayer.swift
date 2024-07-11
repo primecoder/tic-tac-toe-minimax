@@ -14,13 +14,17 @@ public struct TicTacToeCLIPlayer {
             print("Enter cell number 1..9: ")
             if let humanMove = readLine(),
                let cellNumber = Int(humanMove) {
-                game.playMove(cell: cellNumber, player: .human)
-                // Find and play the best move for the AI
-                if let bestMove = game.findBestMove() {
-                    game.playMove(cell: bestMove, player: .ai)
+                do {
+                    try game.playMove(cell: cellNumber, player: .human)
+                    // Find and play the best move for the AI
+                    if let bestMove = game.findBestMove() {
+                        try game.playMove(cell: bestMove, player: .ai)
+                    }
+                    // game.showBoard()
+                    print(game.boardString())
+                } catch {
+                    print("Invalid move: \(error)")
                 }
-                // game.showBoard()
-                print(game.boardString())
             } else {
                 print("Invalid move!")
             }

@@ -1,8 +1,10 @@
 import Foundation
 
-public enum Player {
+public enum Player: Sendable {
     case human, ai
 }
+
+// NOTE: human == 'X', AI = 'O'
 
 public enum Cell {
     case empty, x, o
@@ -17,6 +19,11 @@ public class TicTacToeGame {
         4: (1, 0), 5: (1, 1), 6: (1, 2),
         7: (2, 0), 8: (2, 1), 9: (2, 2)
     ]
+
+    public enum GameError: Error {
+        case invalidMove
+        case invalidCell
+    }
 
     public enum GameStatus {
         case playing
@@ -41,13 +48,16 @@ public class TicTacToeGame {
         board = Array(repeating: Array(repeating: .empty, count: 3), count: 3)
     }
 
-    public func playMove(cell: Int, player: Player) {
+    public func playMove(cell: Int, player: Player) throws {
         guard let (row, col) = Self.cellNumberToRowCol[cell] else {
             print("Invalid move! Cell: \(cell)")
-            return
+            throw GameError.invalidCell
         }
         guard row >= 0 && row < 3 && col >= 0 && col < 3, board[row][col] == .empty else {
-            return // Invalid move
+            throw GameError.invalidMove
+        }
+        guard status == .playing else {
+            throw GameError.invalidMove
         }
         board[row][col] = player == .human ? .x : .o
     }
@@ -97,18 +107,9 @@ public class TicTacToeGame {
         return moves
     }
 
-    // TODO: call boardString() instead
     public func showBoard() {
         print("")
-        for row in board {
-            print(row.map { cell -> String in
-                switch cell {
-                case .empty: return "-"
-                case .x: return "X"
-                case .o: return "O"
-                }
-            }.joined(separator: " "))
-        }
+        print(boardString())
     }
 
     public func boardString() -> String {
@@ -162,6 +163,7 @@ public class TicTacToeGame {
             return nil
         }
 
+        // Convert (row, col) to cell number.
         return bestMove.0 * 3 + bestMove.1 + 1
     }
 
