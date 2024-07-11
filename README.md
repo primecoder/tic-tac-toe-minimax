@@ -66,3 +66,6 @@ Please see Reference [4], below.
 3. [Never Stop Building - Tic Tac Toe: Understanding the Minimax Algorithm](https://www.neverstopbuilding.com/blog/minimax)
 
 4. [Github - VisionML - Simplified](https://github.com/primecoder/VisionML-Simplified)
+
+5. [This project on Github](https://github.com/primecoder/tic-tac-toe-minimax)
+
