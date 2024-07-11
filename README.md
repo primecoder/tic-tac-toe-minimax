@@ -1,13 +1,16 @@
 # tic-tac-toe-minimax
 
+![Tic Tac Toe Game](docs/res/visionml-tictactoe.gif)
+
 Implementation of Tic Tac Toe Minimax algorithm in Swift.
 
 
 ## MiniMax Algorithm
 
-![Tic Tac Toe Game Tree](docs/res/Tic-tac-toe-game-tree.png)
+![Full Minimax Move Tree](docs/res/full-minimax-move-tree.png)
 
-(from: [Wikipedia - Game Tree](https://en.wikipedia.org/wiki/Game_tree))
+(from: [Never Stop Building - Tic Tac Toe: Understanding the Minimax Algorithm](https://www.neverstopbuilding.com/blog/minimax))
+
 
 ## Requirements
 
@@ -15,7 +18,9 @@ Implementation of Tic Tac Toe Minimax algorithm in Swift.
 2. Swift 6 (comes with Xcode 16)
 3. Swift-tools-version 6.0 (also comes with Xcode 16)
 
-## Usage
+## Sample Usage
+
+### Swift Package Client
 
 Include dependency into your Swift package, for example:
 
@@ -46,6 +51,11 @@ let package = Package(
 )
 
 ```
+
+### Swift UI App
+
+Please see Reference [4], below.
+
 
 ## References
 
