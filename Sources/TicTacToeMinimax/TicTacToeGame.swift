@@ -1,15 +1,25 @@
 import Foundation
 
+/// TicTacToe players.
 public enum Player: Sendable {
     case human, ai
 }
 
-// NOTE: human == 'X', AI = 'O'
-
+/// Represent each cell on TicTacToe board.
+///
+/// - human == 'X',
+/// - AI = 'O'
+///
 public enum Cell {
     case empty, x, o
 }
 
+/// TicTacToe game with MiniMax algorithm to find next best move.
+///
+/// NOTE:
+/// - Only support 3x3 board for now
+/// - Human always move first
+///
 public class TicTacToeGame {
     private(set) var board: [[Cell]]
 
@@ -128,7 +138,33 @@ public class TicTacToeGame {
         return boardString
     }
 
-    public func minimax(depth: Int, isMaximising: Bool) -> Int {
+    public func findBestMove() -> Int? {
+        guard let bestMove: (Int, Int) = findBestMove() else {
+            return nil
+        }
+
+        // Convert (row, col) to cell number.
+        return bestMove.0 * 3 + bestMove.1 + 1
+    }
+
+    private func findBestMove() -> (Int, Int)? {
+        var bestScore = -Int.max
+        var bestMove: (Int, Int)? = nil
+
+        for move in availableMoves() {
+            board[move.0][move.1] = .o
+            let moveScore = minimax(depth: 0, isMaximising: false)
+            board[move.0][move.1] = .empty
+            if moveScore > bestScore {
+                bestScore = moveScore
+                bestMove = move
+            }
+        }
+
+        return bestMove
+    }
+
+    private func minimax(depth: Int, isMaximising: Bool) -> Int {
         if checkWin(player: .ai) {
             return 10 - depth // AI wins
         } else if checkWin(player: .human) {
@@ -158,31 +194,6 @@ public class TicTacToeGame {
         }
     }
 
-    public func findBestMove() -> Int? {
-        guard let bestMove: (Int, Int) = findBestMove() else {
-            return nil
-        }
-
-        // Convert (row, col) to cell number.
-        return bestMove.0 * 3 + bestMove.1 + 1
-    }
-
-    private func findBestMove() -> (Int, Int)? {
-        var bestScore = -Int.max
-        var bestMove: (Int, Int)? = nil
-
-        for move in availableMoves() {
-            board[move.0][move.1] = .o
-            let moveScore = minimax(depth: 0, isMaximising: false)
-            board[move.0][move.1] = .empty
-            if moveScore > bestScore {
-                bestScore = moveScore
-                bestMove = move
-            }
-        }
-
-        return bestMove
-    }
 
 }
 
