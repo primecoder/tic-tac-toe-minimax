@@ -7,9 +7,7 @@ Implementation of Tic Tac Toe Minimax algorithm in Swift.
 
 ## MiniMax Algorithm
 
-![Full Minimax Move Tree](docs/res/full-minimax-move-tree.png)
-
-(from: [Never Stop Building - Tic Tac Toe: Understanding the Minimax Algorithm](https://www.neverstopbuilding.com/blog/minimax))
+![Full Minimax Move Tree](docs/res/minimax.png)
 
 
 ## Requirements
